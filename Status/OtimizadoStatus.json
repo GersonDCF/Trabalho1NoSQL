@@ -1,0 +1,102 @@
+{
+    "queryPlanner": {
+      "plannerVersion": 1,
+      "namespace": "taskManager.Tasks",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "status_atual": {
+          "$gte": {
+            "$date": "2023-01-01T00:00:00Z"
+          }
+        }
+      },
+      "winningPlan": {
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "status_atual": 1
+          },
+          "indexName": "status_atual_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "status_atual": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "status_atual": [
+              "[new Date(1672531200000), new Date(9223372036854775807)]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 1,
+      "executionTimeMillis": 1,
+      "totalKeysExamined": 1,
+      "totalDocsExamined": 1,
+      "executionStages": {
+        "stage": "FETCH",
+        "nReturned": 1,
+        "executionTimeMillisEstimate": 1,
+        "works": 2,
+        "advanced": 1,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 1,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 1,
+          "executionTimeMillisEstimate": 1,
+          "works": 2,
+          "advanced": 1,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "status_atual": 1
+          },
+          "indexName": "status_atual_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "status_atual": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "status_atual": [
+              "[new Date(1672531200000), new Date(9223372036854775807)]"
+            ]
+          },
+          "keysExamined": 1,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "serverInfo": {
+      "host": "DESKTOP-5SIO4FA",
+      "port": 27017,
+      "version": "4.4.6",
+      "gitVersion": "72e66213c2c3eab37d9358d5e78ad7f5c1d0d0d7"
+    },
+    "ok": 1
+  }
+  
